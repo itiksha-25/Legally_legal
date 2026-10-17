@@ -31,7 +31,6 @@ export function QuestionCard({
   const [reaction, setReaction] = useState<string | null>(null);
 
   const handleSelect = (value: string) => {
-    if (selected) return;
     setSelected(value);
     setReaction(pickReaction(question.type));
   };
@@ -66,18 +65,18 @@ export function QuestionCard({
               <button
                 key={opt}
                 onClick={() => handleSelect(opt)}
-                disabled={!!selected}
                 className={[
                   "group relative rounded-lg border-2 px-5 py-4 text-left font-body text-base transition-all duration-300",
                   isPicked
                     ? "border-burgundy bg-burgundy text-cream shadow-soft"
-                    : selected
-                      ? "border-parchment bg-cream/40 text-ink/40"
-                      : "border-parchment bg-cream/70 text-ink hover:border-rose hover:bg-cream hover:shadow-soft",
+                    : "border-parchment bg-cream/70 text-ink hover:border-rose hover:bg-cream hover:shadow-soft",
                 ].join(" ")}
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <span className="mr-3 font-display text-lg text-rose group-[.isPicked]:text-cream">
+                <span className={[
+                  "mr-3 font-display text-lg",
+                  isPicked ? "text-cream" : "text-rose",
+                ].join(" ")}>
                   {String.fromCharCode(65 + i)}.
                 </span>
                 {opt}
