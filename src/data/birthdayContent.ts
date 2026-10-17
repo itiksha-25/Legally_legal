@@ -76,73 +76,46 @@ export const chapters: Chapter[] = [
     questions: [
       {
         type: "multiple-choice",
-        question: "Who is more dramatic?",
-        options: ["Me", "You", "We are equally dramatic", "Drama is our love language"],
+question: "Aap kaha se ho?",
+options: ["Mere dil se", "Pahaado se", "Mumbai se", "Pagalkhaane se"], 
+
         memories: [
           {
-            src: "20230621_165337.jpg",
-            title: "The Beginning",
-            date: "circa forever",
-            caption: "We shared exactly one brain cell here, and somehow neither of us had it.",
-            note: "This is where the trouble started.",
+            src: "1.jpeg",
+            title: "CHINI GUDIYAAA! ", 
+date: "Mumbai mei the tab hum so ig 2012?", 
+caption: "Itni cute ab kyu nahi dikhti bhai", 
+
           },
         ],
       },
       {
         type: "either-or",
-        question: "Who cried first at the last sad movie we watched?",
-        options: ["Me", "You"],
+        question: "Aapke best friends kon hain?",",
+options: ["Mommy daddy", "Tum khud", "Parchhaiya", "Mei(Obviously)"], 
         memories: [
           {
-            src: "placeholder-03.svg",
-            title: "Matching Trouble",
-            date: "somewhere in the 90s",
-            caption: "Two small people, one big conspiracy.",
-            note: "Already planning something, obviously.",
+            src: "2.jpeg",
+title: "Bhai ne uski kitab pe paad diya ☹ ", 
+date: "Raheja Mumbai ig?", 
+caption: "Parchhaiyo se mera kuch naata hai", 
+
           },
         ],
       },
       {
         type: "multiple-choice",
-        question: "What's our most iconic inside joke?",
-        options: [
-          "Something only we find funny",
-          "The one with the voice",
-          "That one car ride",
-          "I'm not putting that in writing",
-        ],
+question: "Parr kya apko pta hai mera best friend kon hai??",
+options: ["Mei apni fav hu", "Mera role model", "Chaubey Jiii heheh", "Kaddu Paneeerrr"], 
         memories: [
           {
-            src: "placeholder-04.svg",
-            title: "Officially Partners in Crime",
-            date: "undisclosed",
-            caption: "I would relive this day a thousand times.",
-            note: "Don't tell anyone what we did after this.",
+            src: "3.jpeg",src: "4.jpeg", src: "5.jpeg",
+title: "Will always be you grillypopp ", 
+date: "Good old days jab hum saath rehte the 24/7", 
+caption: "How I miss these days!", 
+
           },
         ],
-      },
-    ],
-    photos: [
-      {
-        src: "20230621_165337.jpg",
-        title: "The Beginning",
-        date: "circa forever",
-        caption: "We shared exactly one brain cell here, and somehow neither of us had it.",
-        note: "This is where the trouble started.",
-      },
-      {
-        src: "placeholder-03.svg",
-        title: "Matching Trouble",
-        date: "somewhere in the 90s",
-        caption: "Two small people, one big conspiracy.",
-        note: "Already planning something, obviously.",
-      },
-      {
-        src: "placeholder-04.svg",
-        title: "Partners in Crime",
-        date: "undisclosed",
-        caption: "I would relive this day a thousand times.",
-        note: "Don't tell anyone what we did after this.",
       },
     ],
   },
@@ -155,73 +128,48 @@ export const chapters: Chapter[] = [
     questions: [
       {
         type: "multiple-choice",
-        question: "Which of us starts the most ridiculous arguments?",
-        options: ["Me, obviously", "You, and you know it", "Whoever's hungrier", "The arguments start themselves"],
-        memories: [
+question: "Aapke kitne daant hain??", 
+options: ["Insaano jitne", "32", "Sabse 2 kamm", "16*2=8"],
+memories: [
           {
-            src: "placeholder-05.svg",
-            title: "Evidence #1",
-            date: "exhibit A",
-            caption: "Look at these faces. Absolute menaces.",
-            note: "We were innocent. Allegedly.",
+            src: "6.jpeg",
+title: "Pta tha kya tujhe?", 
+date: "sann 2010?", 
+caption: "CUTUUUUU 😭😭", note: "Bebo mei bebooooo",
+
           },
         ],
       },
       {
         type: "either-or",
-        question: "Who was the sneakier child?",
-        options: ["Me", "You"],
+question: "What's our most iconic inside joke?", 
+options: [ "SOOOOO HAAAPPPYYY", "That one face 😝", "Car ki reserved seats", "Thanda thanda paaaniii!!", ], 
+
         memories: [
           {
-            src: "placeholder-06.svg",
-            title: "The Great Debate",
-            date: "a Tuesday, probably",
-            caption: "We were arguing about nothing. We always were.",
-            note: "I think you were wrong. You think you were right.",
+            src: "7.jpeg",
+title: "SOOOO FUUNNYYYYY", 
+date: "kya malumm", c
+aption: "Bhai dekho apki bestie kinna pyaarrrr krti hain aap seee AWWW", 
+note: "Besties For Life", }]
+
           },
         ],
       },
       {
         type: "multiple-choice",
-        question: "What's the most chaotic memory we share?",
-        options: [
-          "The one we swore to take to the grave",
-          "That trip that went sideways",
-          "The incident with the kitchen",
-          "All of them. All of the chaos.",
-        ],
+question: "Do you believe in angels??", 
+options: ["Well duhh", "Nahh", "Naastik hu bete", "Ha kyuki mei khud hu"],
+
         memories: [
           {
-            src: "placeholder-07.svg",
-            title: "Unbothered",
-            date: "who's counting",
-            caption: "Somehow we always landed on our feet.",
-            note: "Chaotic, but coordinated.",
+            src: "8.jpeg",
+title: "Tu hai to sahi hehe", 
+date: "Once upon a time in Khaitan", 
+caption: "CUTUUUUU 😭😭", 
+
           },
         ],
-      },
-    ],
-    photos: [
-      {
-        src: "placeholder-05.svg",
-        title: "Evidence #1",
-        date: "exhibit A",
-        caption: "Look at these faces. Absolute menaces.",
-        note: "We were innocent. Allegedly.",
-      },
-      {
-        src: "placeholder-06.svg",
-        title: "The Great Debate",
-        date: "a Tuesday, probably",
-        caption: "We were arguing about nothing. We always were.",
-        note: "I think you were wrong. You think you were right.",
-      },
-      {
-        src: "placeholder-07.svg",
-        title: "Unbothered",
-        date: "who's counting",
-        caption: "Somehow we always landed on our feet.",
-        note: "Chaotic, but coordinated.",
       },
     ],
   },
@@ -234,78 +182,49 @@ export const chapters: Chapter[] = [
     questions: [
       {
         type: "multiple-choice",
-        question: "What is one thing I do that annoys you but that you'd miss if I stopped?",
-        options: ["The texts at weird hours", "My unsolicited advice", "The nicknames", "Everything, honestly"],
-        memories: [
+         question: "Aapka asli naam kya hai??", 
+options: ["DADDAD", "Zizi", "Shomu", "Lovely didi"], 
+ memories: [
           {
-            src: "placeholder-08.svg",
+            src: "9.jpeg",
             title: "Quiet Day",
-            date: "no big deal",
-            caption: "Nothing happened here. That's why I remember it.",
-            note: "Some days don't need a story.",
+title: "Shomu and Radha", 
+date: "mausi ki saal girah", 
+caption: "Awwww meri to aankhe bhar aaiii", 
+
           },
         ],
       },
       {
         type: "multiple-choice",
-        question: "What's a small moment between us that you think about more than you'd admit?",
-        options: [
-          "That time we just sat and talked for hours",
-          "A random ordinary day that stuck with me",
-          "Something we laughed about until we cried",
-          "I'm not telling you, you'd get smug",
-        ],
+question: "Aapne sabse pehle apne andar ke konse jaanwar ko pehchaana tha??", 
+options: ["Shomu", "Naagin", "Khada hua Mongoose ", "Ek Bhais"], 
+
         memories: [
           {
-            src: "placeholder-09.svg",
+            src: "10.jpeg",
             title: "Just Us",
-            date: "the good kind of ordinary",
-            caption: "This is the version of us I like best.",
-            note: "No audience needed.",
+title: "Ye to apka OG roop haii", 
+date: "Ek zamaane kibaat hai", 
+caption: "Fact to hai- same dikhte hain dono", 
+
           },
         ],
       },
       {
         type: "multiple-choice",
-        question: "What do you appreciate most about having me around?",
-        options: [
-          "Someone who gets it",
-          "A built-in alibi",
-          "Free entertainment",
-          "More than I usually say",
-        ],
+question: "Who is more dramatic?",
+options: ["Me", "You", "Dono ka Sansik mantulan kharab hai", "Drama is our love language"], 
+
         memories: [
           {
-            src: "20230717_163649.jpg",
+            src: "11.jpeg", src: "12.jpeg",
             title: "The Look",
-            date: "you know the one",
-            caption: "We've never needed words. That's the whole thing.",
-            note: "One look. Decades of context.",
+title: "Do ‘pagal si’ bacchiya ", 
+date: "mujhe yaad bhi nahi- but yaha maine malai chaap khai thi", 
+caption: "Sanki to hum hain", 
           },
         ],
-      },
-    ],
-    photos: [
-      {
-        src: "placeholder-08.svg",
-        title: "Quiet Day",
-        date: "no big deal",
-        caption: "Nothing happened here. That's why I remember it.",
-        note: "Some days don't need a story.",
-      },
-      {
-        src: "placeholder-09.svg",
-        title: "Just Us",
-        date: "the good kind of ordinary",
-        caption: "This is the version of us I like best.",
-        note: "No audience needed.",
-      },
-      {
-        src: "20230717_163649.jpg",
-        title: "The Look",
-        date: "you know the one",
-        caption: "We've never needed words. That's the whole thing.",
-        note: "One look. Decades of context.",
       },
     ],
   },
@@ -318,64 +237,32 @@ export const chapters: Chapter[] = [
     questions: [
       {
         type: "multiple-choice",
-        question: "If you could relive one day with me, which day would it be?",
-        options: [
-          "A childhood day, the simple ones",
-          "A trip we took together",
-          "A random Tuesday that meant more than it should",
-          "Any day, honestly. I'd take all of them.",
-        ],
+question: "What do you do best?",
+options: ["Judge", "Study", "Bombastic side - eye", "Aegyo(Cute harkate)"], 
         memories: [
           {
-            src: "placeholder-11.svg",
-            title: "Recent History",
-            date: "not long enough ago",
-            caption: "Still here. Still us.",
-            note: "The chaos evolved. It didn't leave.",
+            src: "13.jpeg",
+title: "BOMBASSSTICCC SIDE EYE! CRIMINAL OFFENSIVEE SIDE EYE ", 
+date: "Aapki bestie ki kisi function pe liya tha", 
+caption: "SOOOOO HAAPPPYYY",
+
           },
         ],
       },
       {
         type: "multiple-choice",
-        question: "What's one thing you want me to know today?",
-        options: [
-          "You're my favorite person to call",
-          "I'm proud of you too",
-          "You owe me, and I'm collecting",
-          "More than I usually say",
-        ],
+question: "Aap kya hain?",
+options: ["Bhootni", "Sotudu Billa", "Apnea ap se obsessed", "Deepika Padukone"], 
+
         memories: [
           {
-            src: "placeholder-11.svg",
-            title: "Always",
-            date: "ongoing",
-            caption: "However many yesterdays. Still counting on the tomorrows.",
-            note: "This is the last placeholder. Replace it with a real one.",
+            src: "14.jpeg", src: "15.jpeg", src: "16.jpeg", src: "17.jpeg",
+title: "Mujhe khud nahi pta mei kya bolu ispe ", 
+date: "Saalo se nautanki", 
+caption: "Aap meri jaan hain <3 ", 
+
           },
         ],
-      },
-    ],
-    photos: [
-      {
-        src: "placeholder-11.svg",
-        title: "Recent History",
-        date: "not long enough ago",
-        caption: "Still here. Still us.",
-        note: "The chaos evolved. It didn't leave.",
-      },
-      {
-        src: "placeholder-11.svg",
-        title: "The One With The Camera",
-        date: "a good day",
-        caption: "We clean up alright, when we try.",
-        note: "Rare photographic evidence.",
-      },
-      {
-        src: "placeholder-11.svg",
-        title: "Always",
-        date: "ongoing",
-        caption: "However many yesterdays. Still counting on the tomorrows.",
-        note: "This is the last placeholder. Replace it with a real one.",
       },
     ],
   },
