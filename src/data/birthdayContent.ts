@@ -19,7 +19,7 @@ export const site = {
   intro:
     "Before you open your birthday gift, I have a few things to remind you of. Some are embarrassing. Some are adorable. Unfortunately, you have to go through all of them.",
   startButton: "Take a trip down memory lane",
-  sisterName: "[SISTER'S NAME]",
+  sisterName: "Shomu ZIZI ZIIIIII 💖🥰💝",
 };
 
 export const reactions = {
@@ -414,7 +414,9 @@ export const slideshowConfig = {
 export const letter = {
   openButton: "Open your letter",
   paragraphs: [
-    "Happy Birthday. You made it another year, and I made it another year of having you around — which, let's be honest, is the real gift here.",
+    "Heeloooo CUTIE PATOOTIEEE!!!! Meri pyaari didi I love you so muchhhh! You have no idea how much I truly love you, irrespective of whateveer I say or do. I love you to the fucking core."
+    "Aap meri bohot zyada pyaari behna ho- you're all I need to survive this place. I sure hope you are happy and healthy and hope for you to be ALWAYS AND FOREVERRRRR!!"
+    "Happy Birthday. You made it another year, and I made it another year of having you around — which, tbh, is the real gift here.",
     "I built this whole little website instead of just buying a card, because a card felt too small for the kind of history we have. You've been there for every single version of me, even the ones I'd rather forget. That's not nothing. That's most of it.",
     "We fought about nothing, laughed about everything, and somehow built a language only the two of us speak. I don't know what I did to deserve a sister like you, but I'm not asking questions.",
     "So here's to all our yesterdays — the chaos, the quiet, the inside jokes nobody else would understand, and every version of us that got us to today.",
