@@ -210,7 +210,7 @@ export const chapters: Chapter[] = [
         ],
         memories: [
           {
-            src: "9.jpeg",
+            src: "9.jpg",
             title: "Shomu and Radha",
             date: "mausi ki saal girah",
             caption: "Awwww meri to aankhe bhar aaiii",
@@ -301,13 +301,13 @@ export const chapters: Chapter[] = [
         ],
         memories: [
           {
-            src: "14.jpeg",
+            src: "14.jpg",
             title: "Mujhe khud nahi pta mei kya bolu ispe",
             date: "Saalo se nautanki",
             caption: "Aap meri jaan hain <3",
           },
           {
-            src: "15.jpeg",
+            src: "15.jpg",
             title: "Mujhe khud nahi pta mei kya bolu ispe",
             date: "Saalo se nautanki",
             caption: "Aap meri jaan hain <3",
