@@ -4,17 +4,13 @@ import type { Chapter } from "@/types";
 // ============================================================
 // ALL OUR YESTERDAYS — Content Configuration
 // ============================================================
-// Put your photos and videos inside public/photos/.
-// Use the exact filename in each `src` below.
+// Put photos/videos in public/photos/ and use their exact filenames.
+// Images: .jpg, .jpeg, .png, .webp, .svg
+// Videos: .mp4, .mov, .webm
 //
-// Supported images: .jpg, .jpeg, .png, .webp, .svg
-// Supported videos: .mp4, .mov, .webm
-//
-// Each question can have a `memories` array.
-// Memories should appear one at a time after an answer.
-//
+// Each question's `memories` array is revealed one memory at a time.
 // `chapter.photos` is reserved for the final memory wall.
-// `slideshowMedia` is for leftover photos/videos after the letter.
+// `slideshowMedia` contains leftover photos/videos shown after the letter.
 // ============================================================
 
 export const site = {
@@ -56,10 +52,7 @@ export const chapters: Chapter[] = [
     number: 1,
     intro:
       "Every legend begins somewhere. Ours began with two small humans sharing a house, a bloodline, and a truly unreasonable amount of stubbornness.",
-
-    // Used only for the final memory wall.
     photos: [],
-
     questions: [
       {
         type: "multiple-choice",
@@ -136,9 +129,7 @@ export const chapters: Chapter[] = [
     number: 2,
     intro:
       "Every sibling relationship has a chaos chapter. Ours has several volumes. We fought, we schemed, and we made our parents question their life choices.",
-
     photos: [],
-
     questions: [
       {
         type: "multiple-choice",
@@ -206,9 +197,7 @@ export const chapters: Chapter[] = [
     number: 3,
     intro:
       "It's the small things that stay with you. The ones that didn't seem important at the time, but somehow became the whole point.",
-
     photos: [],
-
     questions: [
       {
         type: "multiple-choice",
@@ -280,9 +269,7 @@ export const chapters: Chapter[] = [
     number: 4,
     intro:
       "Everything changes except this. We grew up, grew into ourselves, and somehow ended up still each other's first call. That's the whole point of this.",
-
     photos: [],
-
     questions: [
       {
         type: "multiple-choice",
@@ -345,8 +332,8 @@ export const chapters: Chapter[] = [
 
 // ============================================================
 // SLIDESHOW
-// Add leftover photos/videos here.
-// Leave as [] if you don't want a slideshow.
+// All files below should be inside public/photos/.
+// Each media file is a separate object in the array.
 // ============================================================
 
 export const slideshowMedia: {
@@ -354,30 +341,61 @@ export const slideshowMedia: {
   type?: "image" | "video";
   caption?: string;
 }[] = [
-  image:
-  { src: "19.jpg", caption: "sleepy babuuu",
-    src: "20.jpg", caption: "Darrpokkk",
-    src: "22.jpg", caption: "Darrpokkk",
-    src: "23.jpg", caption: "Love youu",
-    src: "24.jpg", caption: "Always and FOREVERRRR",
-    src: "25.jpg", caption: "Btao ye kya daali hai",
-    src: "27.jpg", caption: "Hotties to hum hainnn",
-    src: "29.jpg", caption: "Cuties simce day 1!!",
-  
-  },
-
-  video:
   {
-   src: "26.mp4",
-   type: "video",
-   caption: "BASSPANN SE MUZE BULLY KRI HOOOOOO",
-   src: "21.mp4",
-   type: "video",
-   caption: "Ha ye krwalo bass",
-   src: "30.mp4",
-   type: "video",
-   caption: "Ye to HONA HI THAAAA",
-   },
+    src: "19.jpg",
+    type: "image",
+    caption: "sleepy babuuu",
+  },
+  {
+    src: "20.jpg",
+    type: "image",
+    caption: "Darrpokkk",
+  },
+  {
+    src: "22.jpg",
+    type: "image",
+    caption: "Darrpokkk",
+  },
+  {
+    src: "23.jpg",
+    type: "image",
+    caption: "Love youu",
+  },
+  {
+    src: "24.jpg",
+    type: "image",
+    caption: "Always and FOREVERRRR",
+  },
+  {
+    src: "25.jpg",
+    type: "image",
+    caption: "Btao ye kya daali hai",
+  },
+  {
+    src: "27.jpg",
+    type: "image",
+    caption: "Hotties to hum hainnn",
+  },
+  {
+    src: "29.jpg",
+    type: "image",
+    caption: "Cuties simce day 1!!",
+  },
+  {
+    src: "26.mp4",
+    type: "video",
+    caption: "BASSPANN SE MUZE BULLY KRI HOOOOOO",
+  },
+  {
+    src: "21.mp4",
+    type: "video",
+    caption: "Ha ye krwalo bass",
+  },
+  {
+    src: "30.mp4",
+    type: "video",
+    caption: "Ye to HONA HI THAAAA",
+  },
 ];
 
 export const slideshowConfig = {
@@ -417,11 +435,9 @@ export const memoryWall = {
 // ============================================================
 
 export const sharing = {
-  // Enter your number in international format without + or spaces.
-  // Example: "919876543210"
-  // Leave empty to let her choose the WhatsApp recipient.
+  // Enter your phone number in international format without + or spaces.
+  // Example: "919876543210". Leave empty to let her choose the recipient.
   whatsappNumber: "",
-
   heading: "One last thing before you go 💌",
   message:
     "I hope you loved your little trip down memory lane. Want to send your answers back to me? I really want to see what you picked.",
@@ -436,17 +452,17 @@ export const sharing = {
 
 export const photoInstructions = {
   note:
-    "",
+    "Add your own photos and videos to public/photos/ and make sure each filename matches the src value in this file.",
 };
 
 // ============================================================
 // COUNTS
+// `totalPhotos` counts only chapter-level memory-wall photos.
+// Question memories are revealed separately.
 // ============================================================
 
-// The final memory wall uses chapter.photos.
-// The question memories above are counted separately.
 export const totalPhotos = chapters.reduce(
-  (count, chapter) => count + chapter.photos.length,
+  (count, chapter) => count + (chapter.photos?.length ?? 0),
   0,
 );
 
