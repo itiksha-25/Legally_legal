@@ -3,13 +3,15 @@ import { letter } from "@/data/birthdayContent";
 import { site } from "@/data/birthdayContent";
 import { Typewriter } from "@/components/Typewriter";
 import { Confetti } from "@/components/Confetti";
+import { AnswerSharing } from "@/components/AnswerSharing";
 
 interface FinalLetterProps {
   onRelive: () => void;
+  answers: Record<string, string>;
 }
 
 // SCREEN F — The Final Letter
-export function FinalLetter({ onRelive }: FinalLetterProps) {
+export function FinalLetter({ onRelive, answers }: FinalLetterProps) {
   const [opened, setOpened] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [celebrate, setCelebrate] = useState(false);
@@ -127,6 +129,8 @@ export function FinalLetter({ onRelive }: FinalLetterProps) {
                     </p>
                   </div>
                 )}
+
+                {done && <AnswerSharing answers={answers} />}
               </div>
             ) : (
               <div className="mt-6 flex h-40 items-center justify-center">

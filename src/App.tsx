@@ -137,7 +137,7 @@ function App() {
     return (
       <div className="paper-grain min-h-screen bg-cream">
         <Header onRestart={() => setConfirmRestart(true)} />
-        <FinalLetter onRelive={relive} />
+        <FinalLetter onRelive={relive} answers={progress.answers} />
         {confirmRestart && (
           <ConfirmRestart onCancel={() => setConfirmRestart(false)} onConfirm={relive} />
         )}

@@ -287,6 +287,26 @@ export const memoryWall = {
   subheading: "Every version of us is one I want to keep.",
 };
 
+// ---------- ANSWER SHARING ----------
+// After the letter, your sister can send her answers back to you.
+//
+// WHATSAPP PHONE NUMBER:
+//   Enter YOUR phone number in international format, WITHOUT the "+" or spaces.
+//   Example: for +44 7700 900123  →  whatsappNumber: "447700900123"
+//   Leave it as "" (empty) to open WhatsApp without a prefilled recipient —
+//   she'll choose who to send to herself.
+export const sharing = {
+  whatsappNumber: "",
+  heading: "One last thing before you go 💌",
+  message:
+    "I hope you loved your little trip down memory lane. Want to send your answers back to me? I really want to see what you picked.",
+  whatsappButton: "Send my answers on WhatsApp 💗",
+  downloadButton: "Download my answers",
+  downloadFilename: "all-our-yesterdays-answers.txt",
+  greeting: "Happy Birthday! Here are all my answers from All Our Yesterdays.",
+  closingLine: "That's everything. Thank you for making this one so special. ♡",
+};
+
 export const photoInstructions = {
   /* shown briefly on the memory wall footer — keeps it human */
   note: "Photos shown are placeholders. Replace them in public/photos/ to make this truly yours.",
