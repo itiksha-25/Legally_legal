@@ -452,7 +452,7 @@ export const sharing = {
 
 export const photoInstructions = {
   note:
-    "Add your own photos and videos to public/photos/ and make sure each filename matches the src value in this file.",
+    "",
 };
 
 // ============================================================
