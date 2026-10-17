@@ -372,12 +372,12 @@ export const slideshowMedia: {
     caption: "Btao ye kya daali hai",
   },
   {
-    src: "27.jpg",
+    src: "27.jpeg",
     type: "image",
     caption: "Hotties to hum hainnn",
   },
   {
-    src: "29.jpg",
+    src: "29.jpeg",
     type: "image",
     caption: "Cuties simce day 1!!",
   },
@@ -387,7 +387,7 @@ export const slideshowMedia: {
     caption: "BASSPANN SE MUZE BULLY KRI HOOOOOO",
   },
   {
-    src: "21.mp4",
+    src: "21.MOV",
     type: "video",
     caption: "Ha ye krwalo bass",
   },
