@@ -37,7 +37,7 @@ export interface Chapter {
 }
 
 export type Phase = "invitation" | "trail" | "wall" | "slideshow" | "letter";
-export type ChapterStage = "intro" | "questions" | "complete";
+export type ChapterStage = "intro" | "questions" | "photos" | "complete";
 
 export interface GameProgress {
   phase: Phase;
@@ -46,5 +46,5 @@ export interface GameProgress {
   currentQuestion: number;
   answers: Record<string, string>;
   unlockedPhotos: number[];
-  completedChapters: [];
+  completedChapters: number[];
 }

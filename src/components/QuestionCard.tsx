@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Question, Memory } from "@/types";
+import type { Question } from "@/types";
 import { reactions } from "@/data/birthdayContent";
 import { MemoryReveal } from "@/components/MemoryReveal";
 

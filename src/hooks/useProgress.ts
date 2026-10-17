@@ -19,7 +19,12 @@ function load(): GameProgress {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return initialProgress;
     const parsed = JSON.parse(raw) as Partial<GameProgress>;
-    return { ...initialProgress, ...parsed };
+    const merged = { ...initialProgress, ...parsed };
+    // Migrate old "photos" stage (no longer used) to "complete".
+    if (merged.chapterStage === "photos") {
+      merged.chapterStage = "complete";
+    }
+    return merged;
   } catch {
     return initialProgress;
   }

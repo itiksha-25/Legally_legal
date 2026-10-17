@@ -1,14 +1,14 @@
 import { useCallback, useMemo, useState } from "react";
-import { chapters, totalPhotos, site } from "@/data/birthdayContent";
+import { chapters, totalPhotos, site, slideshowMedia } from "@/data/birthdayContent";
 import type { GameProgress, Photo } from "@/types";
 import { useProgress } from "@/hooks/useProgress";
 import { Invitation } from "@/components/Invitation";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChapterIntro, ChapterComplete } from "@/components/ChapterViews";
 import { QuestionCard } from "@/components/QuestionCard";
-import { PhotoReveal } from "@/components/PhotoReveal";
 import { MemoryWall } from "@/components/MemoryWall";
 import { Lightbox } from "@/components/Lightbox";
+import { Slideshow } from "@/components/Slideshow";
 import { FinalLetter } from "@/components/FinalLetter";
 
 function App() {
@@ -49,36 +49,15 @@ function App() {
     const nextQ = progress.currentQuestion + 1;
 
     if (nextQ < ch.questions.length) {
+      // Advance to the next question only. The memory reveal is handled
+      // inside QuestionCard before this callback fires, so we never
+      // skip a question or double-advance.
       update({ answers: newAnswers, currentQuestion: nextQ });
     } else {
-      // chapter questions done → unlock photos
-      update({ answers: newAnswers, chapterStage: "photos" });
-    }
-  };
-
-  const keepMemory = () => {
-    const ch = currentChapter;
-    // unlock all photos of this chapter
-    const newUnlocked = new Set(progress.unlockedPhotos);
-    const startIdx = chapters
-      .slice(0, progress.currentChapter)
-      .reduce((n, c) => n + c.photos.length, 0);
-    ch.photos.forEach((_, pi) => newUnlocked.add(startIdx + pi));
-
-    const newCompleted = [...new Set([...progress.completedChapters, progress.currentChapter])];
-
-    const isLastChapter = progress.currentChapter === chapters.length - 1;
-
-    if (isLastChapter) {
+      // All questions in this chapter are done → mark chapter complete.
+      const newCompleted = [...new Set([...progress.completedChapters, progress.currentChapter])];
       update({
-        unlockedPhotos: [...newUnlocked],
-        completedChapters: newCompleted,
-        chapterStage: "complete",
-        phase: "wall",
-      });
-    } else {
-      update({
-        unlockedPhotos: [...newUnlocked],
+        answers: newAnswers,
         completedChapters: newCompleted,
         chapterStage: "complete",
       });
@@ -91,6 +70,14 @@ function App() {
       update({ phase: "wall" });
     } else {
       update({ currentChapter: next, chapterStage: "intro", currentQuestion: 0 });
+    }
+  };
+
+  const goToSlideshow = () => {
+    if (slideshowMedia.length > 0) {
+      update({ phase: "slideshow" });
+    } else {
+      update({ phase: "letter" });
     }
   };
 
@@ -123,9 +110,21 @@ function App() {
         <MemoryWall
           photos={allUnlockedPhotos.map((p) => p.photo)}
           onPhotoClick={setLightboxPhoto}
-          onContinue={goToLetter}
+          onContinue={goToSlideshow}
         />
         <Lightbox photo={lightboxPhoto} onClose={() => setLightboxPhoto(null)} />
+        {confirmRestart && (
+          <ConfirmRestart onCancel={() => setConfirmRestart(false)} onConfirm={relive} />
+        )}
+      </div>
+    );
+  }
+
+  if (progress.phase === "slideshow") {
+    return (
+      <div className="paper-grain min-h-screen bg-cream">
+        <Header onRestart={() => setConfirmRestart(true)} />
+        <Slideshow onSkip={goToLetter} />
         {confirmRestart && (
           <ConfirmRestart onCancel={() => setConfirmRestart(false)} onConfirm={relive} />
         )}
@@ -167,21 +166,11 @@ function App() {
 
         {progress.chapterStage === "questions" && (
           <QuestionCard
+            key={`${currentChapter.id}-${progress.currentQuestion}`}
             question={currentChapter.questions[progress.currentQuestion]}
             questionNumber={progress.currentQuestion + 1}
             totalQuestions={currentChapter.questions.length}
             onAnswer={answerQuestion}
-          />
-        )}
-
-        {progress.chapterStage === "photos" && (
-          <PhotoReveal
-            photos={currentChapter.photos}
-            chapterTitle={currentChapter.title}
-            startIndex={chapters
-              .slice(0, progress.currentChapter)
-              .reduce((n, c) => n + c.photos.length, 0)}
-            onKeep={keepMemory}
           />
         )}
 
