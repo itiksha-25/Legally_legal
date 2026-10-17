@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Photo } from "@/types";
-import { SmartImage } from "@/components/SmartImage";
+import { SmartMedia } from "@/components/SmartMedia";
 
 interface LightboxProps {
   photo: Photo | null;
@@ -49,7 +49,7 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
           ✕
         </button>
         <div className="aspect-square w-full overflow-hidden bg-parchment">
-          <SmartImage src={photo.src} alt={photo.caption} className="h-full w-full object-cover" />
+          <SmartMedia src={photo.src} alt={photo.caption || photo.title || "photo"} type={photo.type} className="h-full w-full object-cover" />
         </div>
         <div className="mt-3 px-2 text-center">
           {photo.title && (

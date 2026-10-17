@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import type { Photo } from "@/types";
-import { SmartImage } from "@/components/SmartImage";
+import { SmartMedia } from "@/components/SmartMedia";
 
 interface PolaroidProps {
   photo: Photo;
@@ -69,9 +69,10 @@ export function Polaroid({
     >
       {tapeEl}
       <div className="relative aspect-square w-full overflow-hidden bg-parchment">
-        <SmartImage
+        <SmartMedia
           src={photo.src}
-          alt={photo.caption}
+          alt={photo.caption || photo.title || "photo"}
+          type={photo.type}
           className="h-full w-full object-cover"
         />
         {photo.date && (

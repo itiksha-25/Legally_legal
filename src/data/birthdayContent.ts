@@ -6,11 +6,26 @@
 //
 //  HOW TO REPLACE THE PHOTOS:
 //    1. Drop your image files into  public/photos/
-//    2. Use the SAME filename listed below in `src` for each photo
-//       (e.g. public/photos/placeholder-01.jpg  ->  src: "placeholder-01.jpg")
-//    3. Supported formats: .jpg, .png, .webp
-//    4. If an image file is missing, a styled placeholder is shown
+//    2. Use the SAME filename listed below in `src`
+//       (e.g. src: "20230621_165337.jpg")
+//    3. Supported formats: .jpg, .png, .webp, .svg
+//    4. For videos: .mp4, .mov, .webm — they play inline with controls
+//    5. If a file is missing, a styled placeholder is shown
 //       automatically — the page never breaks.
+//
+//  MEMORY ASSOCIATION:
+//    Each question has an optional `memories` array. After your sister
+//    answers a question, each memory in that array is revealed one at
+//    a time. A question with no `memories` just moves to the next
+//    question without showing anything.
+//
+//    chapter.photos is a SEPARATE list used only for the final memory
+//    wall collage. Those photos are NOT shown during the questions.
+//
+//  SLIDESHOW:
+//    After the letter, a slideshow plays through any leftover media
+//    you list in `slideshowMedia`. Add filenames (images or videos)
+//    you didn't use elsewhere. Leave the array empty to skip it.
 // ============================================================
 
 import type { Chapter } from "@/types";
@@ -46,8 +61,10 @@ export const reactions = {
 };
 
 // ---------- CHAPTERS ----------
-// Each chapter has: id, title, blurb, questions[], photos[]
+// Each chapter has: id, title, intro, questions[], photos[]
 // question types: "multiple-choice" | "either-or"
+// Each question may have a `memories` array (revealed one at a time
+// after the answer). chapter.photos is for the final memory wall only.
 
 export const chapters: Chapter[] = [
   {
@@ -61,11 +78,29 @@ export const chapters: Chapter[] = [
         type: "multiple-choice",
         question: "Who is more dramatic?",
         options: ["Me", "You", "We are equally dramatic", "Drama is our love language"],
+        memories: [
+          {
+            src: "20230621_165337.jpg",
+            title: "The Beginning",
+            date: "circa forever",
+            caption: "We shared exactly one brain cell here, and somehow neither of us had it.",
+            note: "This is where the trouble started.",
+          },
+        ],
       },
       {
         type: "either-or",
         question: "Who cried first at the last sad movie we watched?",
         options: ["Me", "You"],
+        memories: [
+          {
+            src: "placeholder-03.svg",
+            title: "Matching Trouble",
+            date: "somewhere in the 90s",
+            caption: "Two small people, one big conspiracy.",
+            note: "Already planning something, obviously.",
+          },
+        ],
       },
       {
         type: "multiple-choice",
@@ -76,26 +111,35 @@ export const chapters: Chapter[] = [
           "That one car ride",
           "I'm not putting that in writing",
         ],
+        memories: [
+          {
+            src: "placeholder-04.svg",
+            title: "Officially Partners in Crime",
+            date: "undisclosed",
+            caption: "I would relive this day a thousand times.",
+            note: "Don't tell anyone what we did after this.",
+          },
+        ],
       },
     ],
     photos: [
       {
-        src: "placeholder-01.jpg",
+        src: "20230621_165337.jpg",
         title: "The Beginning",
         date: "circa forever",
         caption: "We shared exactly one brain cell here, and somehow neither of us had it.",
         note: "This is where the trouble started.",
       },
       {
-        src: "placeholder-02.jpg",
+        src: "placeholder-03.svg",
         title: "Matching Trouble",
         date: "somewhere in the 90s",
         caption: "Two small people, one big conspiracy.",
         note: "Already planning something, obviously.",
       },
       {
-        src: "placeholder-03.jpg",
-        title: "Officially Partners in Crime",
+        src: "placeholder-04.svg",
+        title: "Partners in Crime",
         date: "undisclosed",
         caption: "I would relive this day a thousand times.",
         note: "Don't tell anyone what we did after this.",
@@ -107,17 +151,35 @@ export const chapters: Chapter[] = [
     title: "THE CHAOS",
     number: 2,
     intro:
-      "Every sibling relationship has a chaos chapter. Ours has several volumes. We fought, we schemed, we made our parents question their life choices.",
+      "Every sibling relationship has a chaos chapter. Ours has several volumes. We fought, we schemed, and we made our parents question their life choices.",
     questions: [
       {
         type: "multiple-choice",
         question: "Which of us starts the most ridiculous arguments?",
         options: ["Me, obviously", "You, and you know it", "Whoever's hungrier", "The arguments start themselves"],
+        memories: [
+          {
+            src: "placeholder-05.svg",
+            title: "Evidence #1",
+            date: "exhibit A",
+            caption: "Look at these faces. Absolute menaces.",
+            note: "We were innocent. Allegedly.",
+          },
+        ],
       },
       {
         type: "either-or",
         question: "Who was the sneakier child?",
         options: ["Me", "You"],
+        memories: [
+          {
+            src: "placeholder-06.svg",
+            title: "The Great Debate",
+            date: "a Tuesday, probably",
+            caption: "We were arguing about nothing. We always were.",
+            note: "I think you were wrong. You think you were right.",
+          },
+        ],
       },
       {
         type: "multiple-choice",
@@ -128,25 +190,34 @@ export const chapters: Chapter[] = [
           "The incident with the kitchen",
           "All of them. All of the chaos.",
         ],
+        memories: [
+          {
+            src: "placeholder-07.svg",
+            title: "Unbothered",
+            date: "who's counting",
+            caption: "Somehow we always landed on our feet.",
+            note: "Chaotic, but coordinated.",
+          },
+        ],
       },
     ],
     photos: [
       {
-        src: "placeholder-04.jpg",
+        src: "placeholder-05.svg",
         title: "Evidence #1",
         date: "exhibit A",
         caption: "Look at these faces. Absolute menaces.",
         note: "We were innocent. Allegedly.",
       },
       {
-        src: "placeholder-05.jpg",
+        src: "placeholder-06.svg",
         title: "The Great Debate",
         date: "a Tuesday, probably",
         caption: "We were arguing about nothing. We always were.",
         note: "I think you were wrong. You think you were right.",
       },
       {
-        src: "placeholder-06.jpg",
+        src: "placeholder-07.svg",
         title: "Unbothered",
         date: "who's counting",
         caption: "Somehow we always landed on our feet.",
@@ -165,6 +236,15 @@ export const chapters: Chapter[] = [
         type: "multiple-choice",
         question: "What is one thing I do that annoys you but that you'd miss if I stopped?",
         options: ["The texts at weird hours", "My unsolicited advice", "The nicknames", "Everything, honestly"],
+        memories: [
+          {
+            src: "placeholder-08.svg",
+            title: "Quiet Day",
+            date: "no big deal",
+            caption: "Nothing happened here. That's why I remember it.",
+            note: "Some days don't need a story.",
+          },
+        ],
       },
       {
         type: "multiple-choice",
@@ -174,6 +254,15 @@ export const chapters: Chapter[] = [
           "A random ordinary day that stuck with me",
           "Something we laughed about until we cried",
           "I'm not telling you, you'd get smug",
+        ],
+        memories: [
+          {
+            src: "placeholder-09.svg",
+            title: "Just Us",
+            date: "the good kind of ordinary",
+            caption: "This is the version of us I like best.",
+            note: "No audience needed.",
+          },
         ],
       },
       {
@@ -185,25 +274,34 @@ export const chapters: Chapter[] = [
           "Free entertainment",
           "More than I usually say",
         ],
+        memories: [
+          {
+            src: "20230717_163649.jpg",
+            title: "The Look",
+            date: "you know the one",
+            caption: "We've never needed words. That's the whole thing.",
+            note: "One look. Decades of context.",
+          },
+        ],
       },
     ],
     photos: [
       {
-        src: "placeholder-07.jpg",
+        src: "placeholder-08.svg",
         title: "Quiet Day",
         date: "no big deal",
         caption: "Nothing happened here. That's why I remember it.",
         note: "Some days don't need a story.",
       },
       {
-        src: "placeholder-08.jpg",
+        src: "placeholder-09.svg",
         title: "Just Us",
         date: "the good kind of ordinary",
         caption: "This is the version of us I like best.",
         note: "No audience needed.",
       },
       {
-        src: "placeholder-09.jpg",
+        src: "20230717_163649.jpg",
         title: "The Look",
         date: "you know the one",
         caption: "We've never needed words. That's the whole thing.",
@@ -227,6 +325,15 @@ export const chapters: Chapter[] = [
           "A random Tuesday that meant more than it should",
           "Any day, honestly. I'd take all of them.",
         ],
+        memories: [
+          {
+            src: "placeholder-11.svg",
+            title: "Recent History",
+            date: "not long enough ago",
+            caption: "Still here. Still us.",
+            note: "The chaos evolved. It didn't leave.",
+          },
+        ],
       },
       {
         type: "multiple-choice",
@@ -237,25 +344,34 @@ export const chapters: Chapter[] = [
           "You owe me, and I'm collecting",
           "More than I usually say",
         ],
+        memories: [
+          {
+            src: "placeholder-11.svg",
+            title: "Always",
+            date: "ongoing",
+            caption: "However many yesterdays. Still counting on the tomorrows.",
+            note: "This is the last placeholder. Replace it with a real one.",
+          },
+        ],
       },
     ],
     photos: [
       {
-        src: "placeholder-10.jpg",
+        src: "placeholder-11.svg",
         title: "Recent History",
         date: "not long enough ago",
         caption: "Still here. Still us.",
         note: "The chaos evolved. It didn't leave.",
       },
       {
-        src: "placeholder-11.jpg",
+        src: "placeholder-11.svg",
         title: "The One With The Camera",
         date: "a good day",
         caption: "We clean up alright, when we try.",
         note: "Rare photographic evidence.",
       },
       {
-        src: "placeholder-12.jpg",
+        src: "placeholder-11.svg",
         title: "Always",
         date: "ongoing",
         caption: "However many yesterdays. Still counting on the tomorrows.",
@@ -264,6 +380,29 @@ export const chapters: Chapter[] = [
     ],
   },
 ];
+
+// ---------- SLIDESHOW ----------
+// Leftover images and videos you didn't use in the questions.
+// They play as a fun slideshow after the letter. Add or remove freely.
+// Videos auto-advance when they end; images advance on a timer or tap.
+// Leave as an empty array [] to skip the slideshow entirely.
+export const slideshowMedia: { src: string; type?: "image" | "video"; caption?: string }[] = [
+  // Example entries — replace with your own leftover files:
+  // { src: "WhatsApp Image 2026-10-17 at 6.16.32 PM.jpeg", caption: "us, being us" },
+  // { src: "Snapchat-1263331909.mp4", type: "video", caption: "this one still makes me laugh" },
+  {
+    src: "placeholder-03.svg",
+    caption: "Add your leftover photos and videos in birthdayContent.ts",
+  },
+];
+
+export const slideshowConfig = {
+  heading: "The outtakes",
+  subheading: "The ones that didn't make the cut. Honestly, maybe the best ones.",
+  secondsPerImage: 4,
+  startButton: "Play the outtakes",
+  skipButton: "Skip to the letter",
+};
 
 // ---------- FINAL LETTER ----------
 // Use \n\n to separate paragraphs. The letter types out line by line.
@@ -308,7 +447,6 @@ export const sharing = {
 };
 
 export const photoInstructions = {
-  /* shown briefly on the memory wall footer — keeps it human */
   note: "Photos shown are placeholders. Replace them in public/photos/ to make this truly yours.",
 };
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import type { Question } from "@/types";
+import type { Question, Memory } from "@/types";
 import { reactions } from "@/data/birthdayContent";
+import { MemoryReveal } from "@/components/MemoryReveal";
 
 interface QuestionCardProps {
   question: Question;
@@ -16,6 +17,8 @@ function pickReaction(type: Question["type"]): string {
 }
 
 // SCREEN C — Interactive Questions
+// Flow: pick answer → reaction → reveal this question's memories one at
+// a time → continue to next question.
 export function QuestionCard({
   question,
   questionNumber,
@@ -24,12 +27,37 @@ export function QuestionCard({
 }: QuestionCardProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [reaction, setReaction] = useState<string | null>(null);
+  const [showMemories, setShowMemories] = useState(false);
 
   const handleSelect = (value: string) => {
     setSelected(value);
     setReaction(pickReaction(question.type));
   };
 
+  const handleContinueToMemories = () => {
+    if (question.memories && question.memories.length > 0) {
+      setShowMemories(true);
+    } else {
+      // No memories for this question — go straight to the next one.
+      onAnswer(selected!);
+    }
+  };
+
+  const handleMemoriesDone = () => {
+    onAnswer(selected!);
+  };
+
+  // ---- Memory reveal stage ----
+  if (showMemories && question.memories && question.memories.length > 0) {
+    return (
+      <MemoryReveal
+        memories={question.memories}
+        onDone={handleMemoriesDone}
+      />
+    );
+  }
+
+  // ---- Question + answer stage ----
   return (
     <div className="mx-auto w-full max-w-xl animate-fadeIn">
       <div className="mb-6 flex items-center justify-center gap-2 font-body text-xs uppercase tracking-widest text-ink/50">
@@ -86,10 +114,12 @@ export function QuestionCard({
           </div>
 
           <button
-            onClick={() => onAnswer(selected)}
+            onClick={handleContinueToMemories}
             className="group inline-flex items-center gap-2 rounded-full bg-burgundy px-7 py-3 font-body text-base font-medium text-cream shadow-soft transition-all hover:bg-burgundy-dark"
           >
-            Keep going
+            {question.memories && question.memories.length > 0
+              ? "See what you unlocked"
+              : "Keep going"}
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </button>
         </div>
