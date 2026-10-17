@@ -354,15 +354,30 @@ export const slideshowMedia: {
   type?: "image" | "video";
   caption?: string;
 }[] = [
-  // Example image:
-  // { src: "birthday-extra.jpeg", caption: "us, being us" },
+  image:
+  { src: "19.jpg", caption: "sleepy babuuu",
+    src: "20.jpg", caption: "Darrpokkk",
+    src: "22.jpg", caption: "Darrpokkk",
+    src: "23.jpg", caption: "Love youu",
+    src: "24.jpg", caption: "Always and FOREVERRRR",
+    src: "25.jpg", caption: "Btao ye kya daali hai",
+    src: "27.jpg", caption: "Hotties to hum hainnn",
+    src: "29.jpg", caption: "Cuties simce day 1!!",
+  
+  },
 
-  // Example video:
-  // {
-  //   src: "funny-memory.mp4",
-  //   type: "video",
-  //   caption: "this one still makes me laugh",
-  // },
+  video:
+  {
+   src: "26.mp4",
+   type: "video",
+   caption: "BASSPANN SE MUZE BULLY KRI HOOOOOO",
+   src: "21.mp4",
+   type: "video",
+   caption: "Ha ye krwalo bass",
+   src: "30.mp4",
+   type: "video",
+   caption: "Ye to HONA HI THAAAA",
+   },
 ];
 
 export const slideshowConfig = {
@@ -421,7 +436,7 @@ export const sharing = {
 
 export const photoInstructions = {
   note:
-    "Photos shown are placeholders. Replace them in public/photos/ to make this truly yours.",
+    "",
 };
 
 // ============================================================
