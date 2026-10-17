@@ -162,7 +162,7 @@ export const chapters: Chapter[] = [
         memories: [
           {
             src: "7.jpeg",
-            title: "SOOOO FUUNNYYYYY",
+            title: "SOOOO HAAAPPPYYYYY",
             date: "kya malumm",
             caption:
               "Bhai dekho apki bestie kinna pyaarrrr krti hain aap seee AWWW",
@@ -296,7 +296,7 @@ export const chapters: Chapter[] = [
         options: [
           "Bhootni",
           "Sotudu Billa",
-          "Apnea ap se obsessed",
+          "Apne aap se obsessed",
           "Deepika Padukone",
         ],
         memories: [
@@ -414,13 +414,18 @@ export const slideshowConfig = {
 export const letter = {
   openButton: "Open your letter",
   paragraphs: [
-    "Heeloooo CUTIE PATOOTIEEE!!!! Meri pyaari didi I love you so muchhhh! You have no idea how much I truly love you, irrespective of whateveer I say or do. I love you to the fucking core."
-    "Aap meri bohot zyada pyaari behna ho- you're all I need to survive this place. I sure hope you are happy and healthy and hope for you to be ALWAYS AND FOREVERRRRR!!"
+    "Heeloooo CUTIE PATOOTIEEE!!!! JANAMDIN KI HAARDIKKK SHUBHKAAMNAEEEEEEEEE YAYAYYAYAYAYA!! Meri pyaari didi I love you so muchhhh! You have no idea how much I truly love you, irrespective of whateveer I say or do. I love you to the fucking core.",
+    "Aap meri bohot zyada pyaari behna ho- you're all I need to survive this place. I sure hope you are happy and healthy and hope for you to be ALWAYS AND FOREVERRRRR!!",
+    "Ik this year you feel kinda lonely and alone-ish on your birthday but babygrilll!! Mei hu naa.",
+    "Abhi kuch dino mei hi to milne waale hain vaise bhi- tab badhiya se mnaenge apka bday babuuuu",
+    "Ek aur saal budhi ho gai ho ab aap- so I hope aap mei aur buddhi ai hogi ki apni chhoti behen pe haath per nahi uthane hote aur usse pyaar krna hota hai! ;)",
+    "Acha thik hai ab thoda tameez wala likh deti hu lol",
     "Happy Birthday. You made it another year, and I made it another year of having you around — which, tbh, is the real gift here.",
-    "I built this whole little website instead of just buying a card, because a card felt too small for the kind of history we have. You've been there for every single version of me, even the ones I'd rather forget. That's not nothing. That's most of it.",
-    "We fought about nothing, laughed about everything, and somehow built a language only the two of us speak. I don't know what I did to deserve a sister like you, but I'm not asking questions.",
+    "I built this just because anything else felt too small for the kind of history we have. You've been there for every single version of me, even the ones I'd rather forget. That's not nothing. That's most of it.",
+    "We fought about nothing, laughed about everything, and somehow built a language only the two of us speak(ykiyk 😉😏). I don't know what I did to deserve a sister like you, but I'm not asking questions.",
     "So here's to all our yesterdays — the chaos, the quiet, the inside jokes nobody else would understand, and every version of us that got us to today.",
-    "I'm proud of you. I'm grateful for you. And yes, fine, I love you, even though you're still the most annoying person I know.",
+    "I'm proud of you. I'm grateful for you. And yes, I love you, even though you're still the most annoying person I know.",
+    "So never EVER doubt yourself about anything AT ALL! And if you ever need me- I'm barely a phone call away.",
   ],
   closing: "Happy Birthday",
   signOff: "Always your favorite menace",
