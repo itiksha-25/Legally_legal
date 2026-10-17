@@ -43,16 +43,11 @@ export const reactions = {
     "Controversial. I love it.",
     "Of course you'd pick that one.",
   ],
-  reflective: [
-    "Thank you for that one. I mean it.",
-    "That one's going in the vault.",
-    "You're making me sentimental. Stop it.",
-  ],
 };
 
 // ---------- CHAPTERS ----------
 // Each chapter has: id, title, blurb, questions[], photos[]
-// question types: "multiple-choice" | "either-or" | "reflective" | "short-answer"
+// question types: "multiple-choice" | "either-or"
 
 export const chapters: Chapter[] = [
   {
@@ -172,8 +167,14 @@ export const chapters: Chapter[] = [
         options: ["The texts at weird hours", "My unsolicited advice", "The nicknames", "Everything, honestly"],
       },
       {
-        type: "reflective",
+        type: "multiple-choice",
         question: "What's a small moment between us that you think about more than you'd admit?",
+        options: [
+          "That time we just sat and talked for hours",
+          "A random ordinary day that stuck with me",
+          "Something we laughed about until we cried",
+          "I'm not telling you, you'd get smug",
+        ],
       },
       {
         type: "multiple-choice",
@@ -218,12 +219,24 @@ export const chapters: Chapter[] = [
       "Everything changes except this. We grew up, grew into ourselves, and somehow ended up still each other's first call. That's the whole point of this.",
     questions: [
       {
-        type: "reflective",
+        type: "multiple-choice",
         question: "If you could relive one day with me, which day would it be?",
+        options: [
+          "A childhood day, the simple ones",
+          "A trip we took together",
+          "A random Tuesday that meant more than it should",
+          "Any day, honestly. I'd take all of them.",
+        ],
       },
       {
-        type: "reflective",
+        type: "multiple-choice",
         question: "What's one thing you want me to know today?",
+        options: [
+          "You're my favorite person to call",
+          "I'm proud of you too",
+          "You owe me, and I'm collecting",
+          "More than I usually say",
+        ],
       },
     ],
     photos: [

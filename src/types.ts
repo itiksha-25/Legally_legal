@@ -1,4 +1,4 @@
-export type QuestionType = "multiple-choice" | "either-or" | "reflective" | "short-answer";
+export type QuestionType = "multiple-choice" | "either-or";
 
 export interface Question {
   type: QuestionType;

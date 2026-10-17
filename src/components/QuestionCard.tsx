@@ -11,11 +11,7 @@ interface QuestionCardProps {
 
 function pickReaction(type: Question["type"]): string {
   const pool =
-    type === "multiple-choice"
-      ? reactions.multipleChoice
-      : type === "either-or"
-        ? reactions.eitherOr
-        : reactions.reflective;
+    type === "either-or" ? reactions.eitherOr : reactions.multipleChoice;
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
@@ -27,22 +23,12 @@ export function QuestionCard({
   onAnswer,
 }: QuestionCardProps) {
   const [selected, setSelected] = useState<string | null>(null);
-  const [text, setText] = useState("");
   const [reaction, setReaction] = useState<string | null>(null);
 
   const handleSelect = (value: string) => {
     setSelected(value);
     setReaction(pickReaction(question.type));
   };
-
-  const handleReflectiveSubmit = () => {
-    if (selected) return;
-    const value = text.trim() || "(kept that one to herself)";
-    setSelected(value);
-    setReaction(pickReaction(question.type));
-  };
-
-  const isReflective = question.type === "reflective" || question.type === "short-answer";
 
   return (
     <div className="mx-auto w-full max-w-xl animate-fadeIn">
@@ -57,7 +43,7 @@ export function QuestionCard({
       </h2>
 
       {/* Multiple choice / either-or */}
-      {!isReflective && question.options && (
+      {question.options && (
         <div className="mt-8 flex flex-col gap-3">
           {question.options.map((opt, i) => {
             const isPicked = selected === opt;
@@ -89,28 +75,6 @@ export function QuestionCard({
         </div>
       )}
 
-      {/* Reflective / short-answer */}
-      {isReflective && (
-        <div className="mt-8 flex flex-col items-center gap-4">
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            disabled={!!selected}
-            placeholder="Type whatever comes to mind…"
-            rows={4}
-            className="w-full rounded-lg border-2 border-parchment bg-cream/80 px-5 py-4 font-body text-base text-ink placeholder:text-ink/40 focus:border-burgundy focus:outline-none disabled:opacity-60"
-          />
-          {!selected && (
-            <button
-              onClick={handleReflectiveSubmit}
-              className="rounded-full bg-burgundy px-6 py-2.5 font-body text-sm font-medium text-cream shadow-soft transition hover:bg-burgundy-dark"
-            >
-              Share it
-            </button>
-          )}
-        </div>
-      )}
-
       {/* Reaction + continue */}
       {selected && reaction && (
         <div className="mt-8 flex flex-col items-center gap-5 animate-fadeIn">
@@ -120,12 +84,6 @@ export function QuestionCard({
             </span>
             <p className="handwritten text-xl leading-snug text-burgundy">{reaction}</p>
           </div>
-
-          {isReflective && (
-            <p className="max-w-sm text-center font-body text-sm italic text-ink/60">
-              You wrote: "{selected}"
-            </p>
-          )}
 
           <button
             onClick={() => onAnswer(selected)}
