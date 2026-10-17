@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f0e5;
+  color: #382d29;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Paper grain texture overlay */
+.paper-grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0 0.16 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Subtle paper texture used on surfaces */
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(103, 47, 58, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(197, 141, 145, 0.04) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.86 0 0 0 0 0.78 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+}
+
+.vignette {
+  box-shadow: inset 0 0 120px rgba(56, 45, 41, 0.12);
+}
+
+/* Handwritten caption */
+.handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* Film strip */
+.film-strip {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #382d29 0px,
+      #382d29 8px,
+      transparent 8px,
+      transparent 14px
+    ),
+    #382d29;
+}
+
+/* Decorative dashed scrapbook line */
+.dashed-scrap {
+  border-style: dashed;
+  border-color: rgba(103, 47, 58, 0.35);
+}
+
+/* Polaroid frame helper */
+.polaroid {
+  background: #fbf6ec;
+  padding: 10px 10px 38px;
+  box-shadow:
+    0 6px 18px -4px rgba(56, 45, 41, 0.25),
+    0 2px 6px -2px rgba(56, 45, 41, 0.15);
+}
+
+/* Tape decoration */
+.tape {
+  position: absolute;
+  width: 70px;
+  height: 22px;
+  background: rgba(197, 141, 145, 0.35);
+  border: 1px solid rgba(197, 141, 145, 0.2);
+  box-shadow: 0 1px 3px rgba(56, 45, 41, 0.12);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #672f3a;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide scrollbar for horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
